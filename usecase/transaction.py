@@ -1,12 +1,6 @@
-from abc import ABC, abstractmethod
+from bases import ITransaction
 from models.models import Account
 
-
-class ITransaction(ABC):
-    @abstractmethod
-    def execute(self) -> None:
-        raise NotImplementedError
-    
 
 class DepositCommand(ITransaction):
     def __init__(self, account: Account, amount: float):
