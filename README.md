@@ -1,5 +1,4 @@
-# banking-system-backend
-Banking System Backend
+# Banking System Backend
 
 ### backend exam file: Python Backend Exam.pdf
 
