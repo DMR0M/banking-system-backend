@@ -13,7 +13,7 @@ class Account(BaseModel):
             raise ValueError("Amount must be positive")
         
         self.balance += amount
-        self._check_first_transaction(amount, "DEPOSITED")
+        self._track_transaction(amount, "DEPOSITED")
     
     def withdraw(self, amount: float) -> None:
         if amount <= 0:
@@ -23,12 +23,12 @@ class Account(BaseModel):
             raise ValueError("Insufficient funds!")
 
         self.balance -= amount
-        self._check_first_transaction(amount, "WITHDRAWN")
+        self._track_transaction(amount, "WITHDRAWN")
     
     def get_balance(self) -> float:
         return self.balance
     
-    def _check_first_transaction(self, amount: float, transaction: str) -> None:
+    def _track_transaction(self, amount: float, transaction: str) -> None:
         # Check to see if there is no transactions to the account
         # Initialize an empty list for tracking transactions
         if self.record is None:
