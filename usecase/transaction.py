@@ -1,4 +1,4 @@
-from bases import ITransaction
+from .bases import ITransaction
 from models.models import Account
 
 
