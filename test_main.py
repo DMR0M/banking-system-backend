@@ -1,6 +1,7 @@
 import pytest
 from models.models import Customer
-from infrastructure.account_repository import AccountFactory, AccountRepository
+from infrastructure.account_repository import AccountRepository
+from usecase.account_creation import AccountFactory
 from usecase.transaction import DepositCommand, WithdrawCommand, Transaction
 from usecase.account_statement import AccountStatement
 
