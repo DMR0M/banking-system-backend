@@ -14,10 +14,7 @@ class AccountRepository:
         self._accounts = {}
     
     def save_account(self, account: Account):
-        try:
-            self.accounts[account.customer_id] = account
-        except Exception as e:
-            raise 
+        self.accounts[account.customer_id] = account
 
     def find_account_by_id(self, account_id: str) -> Optional[Account]:
         for account in self.accounts.values():
